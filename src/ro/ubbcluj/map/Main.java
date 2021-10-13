@@ -21,8 +21,8 @@ public class Main {
     }
     public static void main(String[] args) {
         MessageTask[] l=createMessageTaskArray();
-        for (int i = 0; i < l.length; i++) {
-            System.out.println(l[i]);
+        for (MessageTask messageTask : l) {
+            System.out.println(messageTask);
         }
         Factory fabrica = TaskContainerFactory.getInstance();
         Container container = fabrica.createContainer(Strategy.LIFO);
