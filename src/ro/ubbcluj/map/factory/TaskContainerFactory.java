@@ -1,6 +1,7 @@
 package ro.ubbcluj.map.factory;
 
 import ro.ubbcluj.map.Container.Container;
+import ro.ubbcluj.map.Container.QueueContainer;
 import ro.ubbcluj.map.Container.StackContainer;
 import ro.ubbcluj.map.Container.Strategy;
 
@@ -9,9 +10,7 @@ public class TaskContainerFactory implements Factory{
     private static TaskContainerFactory instance = null;
 
     private TaskContainerFactory(){
-
-
-    };
+    }
 
     public static TaskContainerFactory getInstance(){
         if(instance == null)
@@ -22,11 +21,10 @@ public class TaskContainerFactory implements Factory{
 
     @Override
     public Container createContainer(Strategy st) {
-        switch(st){
-            case LIFO:
-                return new StackContainer();
-            default:
-                return null;
-        }
+        return switch (st) {
+            case LIFO -> new StackContainer();
+            case FIFO -> new QueueContainer();
+
+        };
     }
 }

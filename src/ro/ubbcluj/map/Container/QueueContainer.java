@@ -9,7 +9,7 @@ public class QueueContainer implements Container {
     int ultim;
     int size;
 
-    QueueContainer(){
+    public QueueContainer(){
         tasks = new Task[10];
         size = 0;
         prim = 0;
@@ -23,6 +23,7 @@ public class QueueContainer implements Container {
             return null;
         Task t = tasks[prim];
         prim++;
+        size--;
         return t;
     }
 
@@ -32,6 +33,7 @@ public class QueueContainer implements Container {
             resize();
         tasks[ultim] = task;
         ultim++;
+        size++;
 
     }
 
@@ -42,7 +44,7 @@ public class QueueContainer implements Container {
         System.arraycopy(tasks, prim, copyTasks, 0, size);
         tasks = copyTasks;
         prim = 0;
-        ultim = size - 1;
+        ultim = size;
 
     }
 
