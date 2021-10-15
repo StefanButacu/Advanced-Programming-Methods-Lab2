@@ -2,16 +2,19 @@ package ro.ubbcluj.map.Container;
 
 import ro.ubbcluj.map.model.Task;
 
-public class QueueContainer implements Container {
+
+// superclass with size attr
+// and size() + isEmpty() methods
+
+public class QueueContainer extends DynamicContainer implements Container {
 
     Task[] tasks;
     int prim;
     int ultim;
-    int size;
 
     public QueueContainer(){
+        super();
         tasks = new Task[10];
-        size = 0;
         prim = 0;
         ultim = 0;
     }
@@ -48,13 +51,4 @@ public class QueueContainer implements Container {
 
     }
 
-    @Override
-    public int size() {
-        return size;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return size == 0;
-    }
 }

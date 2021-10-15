@@ -1,15 +1,16 @@
 package ro.ubbcluj.map.Container;
 
 import ro.ubbcluj.map.model.Task;
+// superclass with size attr
+// and size() + isEmpty() methods
 
-public class StackContainer implements Container {
+public class StackContainer extends DynamicContainer implements Container {
 
-    int size;
     private Task[] tasks;
 
     public StackContainer() {
+        super();
         tasks = new Task[10];
-        size = 0;
 
     }
 
@@ -49,13 +50,4 @@ public class StackContainer implements Container {
 
     }
 
-    @Override
-    public int size() {
-        return size;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return size == 0;
-    }
 }
