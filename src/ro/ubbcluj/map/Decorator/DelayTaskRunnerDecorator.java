@@ -7,6 +7,9 @@ public class DelayTaskRunnerDecorator extends AbstractTaskRunnerDecorator {
         super(taskRunner);
     }
 
+    /**
+     * Executes task with delay of 3000 miliseconds
+     */
     public void executeOneTask(){
         try{
             Thread.sleep(3000);

@@ -18,6 +18,7 @@ public class SortingTask extends Task{
     @Override
     public void execute() {
        this.sorter.sort(this.ints);
+        System.out.println(Arrays.toString(ints));
     }
 
     public int[] getSortedArray(){

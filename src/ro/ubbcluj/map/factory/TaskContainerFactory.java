@@ -12,6 +12,10 @@ public class TaskContainerFactory implements Factory{
     private TaskContainerFactory(){
     }
 
+    /**
+     *
+     * @return - the one and only instance of this class
+     */
     public static TaskContainerFactory getInstance(){
         if(instance == null)
             instance = new TaskContainerFactory();

@@ -20,6 +20,11 @@ public class QueueContainer extends DynamicContainer implements Container {
     }
 
 
+    /**
+     *
+     * @return - null if queue is empty
+     *         - the first Task otherwhise
+     */
     @Override
     public Task remove() {
         if(size == 0)
@@ -30,6 +35,10 @@ public class QueueContainer extends DynamicContainer implements Container {
         return t;
     }
 
+    /**
+     * Adds and the end of the queue a task
+     * @param task - Task
+     */
     @Override
     public void add(Task task) {
         if(ultim == tasks.length)
@@ -39,7 +48,9 @@ public class QueueContainer extends DynamicContainer implements Container {
         size++;
 
     }
-
+    /**
+     * Doubles the capacity of the array
+     */
     private void resize() {
         Task[] copyTasks = new Task[2 * tasks.length];
         // copy from the prim position

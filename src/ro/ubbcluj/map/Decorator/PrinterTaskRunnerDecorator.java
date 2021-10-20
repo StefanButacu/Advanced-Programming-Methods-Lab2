@@ -10,6 +10,9 @@ public class PrinterTaskRunnerDecorator extends AbstractTaskRunnerDecorator {
         super(taskRunner);
     }
 
+    /**
+     * Executes tasks printing the time of execution
+     */
     @Override
     public void executeOneTask() {
         super.executeOneTask();

@@ -42,8 +42,10 @@ public class StackContainer extends DynamicContainer implements Container {
 
     }
 
+    /**
+     * Doubles the capacity of the array
+     */
     private void resize() {
-
         Task[] copyTasks = new Task[2 * tasks.length];
         System.arraycopy(tasks, 0, copyTasks, 0, size);
         tasks = copyTasks;

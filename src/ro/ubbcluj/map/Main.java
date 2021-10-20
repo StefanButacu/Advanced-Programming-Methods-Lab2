@@ -27,7 +27,7 @@ public class Main {
     public static void testDecorators(String[] args){
 
         MessageTask[] l = createMessageTaskArray();
-        Strategy st = (args[1].equals("LIFO"))  ? Strategy.LIFO : Strategy.FIFO;
+        Strategy st = (args[0].equals("LIFO"))  ? Strategy.LIFO : Strategy.FIFO;
         testStrategy(st);
         testPrinter(st);
         testDelay(st);
